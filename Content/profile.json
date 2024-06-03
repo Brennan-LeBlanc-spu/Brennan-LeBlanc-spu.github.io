@@ -27,10 +27,10 @@
   "Resume": "Brennan_LeBlanc_Resume_2024.pdf"  
 },
 "Project1": {
-    "Title": "System Proposal",
-    "Desc": "This is a System Proposal for a discount app called Umbrella. The app will be built in Xcode to be uploaded to the IOS app store.",
+    "Title": "System Specification",
+    "Desc": "This is a System Specification for a discount app called Umbrella. The app will be built in Xcode to be uploaded to the IOS app store.",
     "GitHubRepo": "https://github.com",
-    "MainImage": "P1Main.png",
+    "MainImage": "pic.png",
     "DetailImages": ["P1Detail1.png","P1Detail2.png","P1Detail3.png"]
   },
   "Project2": {
