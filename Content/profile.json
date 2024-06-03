@@ -4,7 +4,7 @@
   "Currently": "Computer Science Student",
   "Headshot": "zoomPicUnder2.jpeg",
   "Thumbnail": "student-logo.webp",
-  "AboutText": "Hi, I am Brennan LeBlanc. I am a computer science student at Seattle Pacific University."
+  "AboutText": "Hi, I am Brennan LeBlanc. I am a computer science student at Seattle Pacific University. I have an interest in software development and cybersecurity. I am currently obtaining my Security+ certification from CompTIA. I enjoy problems that challenge me, and I like to learn constantly."
 },
 "Contact": {
   "EMail": "leblancb@spu.edu",
@@ -14,7 +14,7 @@
   "GitHub": "https://github.com/Brennan-LeBlanc-spu"
 },
 "Experience": {
-  "ExperienceText": "Use this area to explain how you got to where you are and what you are currently doing now.<br><br>This is a good spot to talk yourself up.",
+  "ExperienceText": "I started to code at Seattle Pacific University. I am going into my senior year and have experience in C++, Data Structures, Concepts in Programming, Algorithms, and Computer Architecture. In the summer of 2023, I worked for Strategic Alliance Consulting as a Cybersecurity Analyst Intern. Summer of 2024, I am working for Prisidio as a Cybersecurity Intern.",
   "School": "Seattle Pacific University",
   "Major": "Computer Science",
   "Graduation": "June 2025",
