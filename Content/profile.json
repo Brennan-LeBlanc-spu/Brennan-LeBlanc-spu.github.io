@@ -14,14 +14,14 @@
   "GitHub": "https://github.com/Brennan-LeBlanc-spu"
 },
 "Experience": {
-  "ExperienceText": "I started to code at Seattle Pacific University. I am going into my senior year and have experience in C++, Data Structures, Concepts in Programming, Algorithms, and Computer Architecture. In the summer of 2023, I worked for Strategic Alliance Consulting as a Cybersecurity Analyst Intern. Summer of 2024, I am working for Prisidio as a Cybersecurity Intern.",
+  "ExperienceText": "I started to code at Seattle Pacific University. I am going into my senior year and have experience in C++, Data Structures, Concepts in Programming, Algorithms, and Computer Architecture.",
   "School": "Seattle Pacific University",
   "Major": "Computer Science",
   "Graduation": "June 2025",
   "EducationText": "Use this to add some narrative to your education section",
   "Employment": "Seattle Pacific University",
   "Role": "Computer Science Lab Assistant",
-  "EmploymentText": "Use this to add some narrative to your employment section",
+  "EmploymentText": "In the summer of 2023, I worked as a Cybersecurity Analyst Intern for Strategic Alliance Consulting. Summer of 2024, I am working for Prisidio as a Cybersecurity Intern.",
   "Skills": ["C++", " JavaScript", " Node", " CSS"," HTML"],
   "SkillsText": "Use this to add some narrative to your skills section",
   "Resume": "Brennan_LeBlanc_Resume_2024.pdf"  
