@@ -27,8 +27,8 @@
   "Resume": "Brennan_LeBlanc_Resume_2024.pdf"  
 },
 "Project1": {
-    "Title": "Interesting Project 1",
-    "Desc": "This is a description of Project One.<br><br>It has a GitHub repo and more details shown in screenshots.",
+    "Title": "System Proposal",
+    "Desc": "This is a System Proposal for a discount app called Umbrella. The app will be built in Xcode to be uploaded to the IOS app store.",
     "GitHubRepo": "https://github.com",
     "MainImage": "P1Main.png",
     "DetailImages": ["P1Detail1.png","P1Detail2.png","P1Detail3.png"]
