@@ -18,12 +18,12 @@
   "School": "Seattle Pacific University",
   "Major": "Computer Science",
   "Graduation": "June 2025",
-  "EducationText": "Use this to add some narrative to your education section",
-  "Employment": "Seattle Pacific University",
-  "Role": "Computer Science Lab Assistant",
-  "EmploymentText": "In the summer of 2023, I worked as a Cybersecurity Analyst Intern for Strategic Alliance Consulting. Summer of 2024, I am working for Prisidio as a Cybersecurity Intern.",
-  "Skills": ["C++", " JavaScript", " Node", " CSS"," HTML"],
-  "SkillsText": "Use this to add some narrative to your skills section",
+  "EducationText": "I have gone through Data Structure, Concepts in Programming, Algorithms, Machine Learning, Computer Architecture, and a focus on C++",
+  "Employment": "Strategic Alliance Consulting",
+  "Role": "Cybersecurity Analyst Intern",
+  "EmploymentText": "In the summer of 2023, I worked as a Cybersecurity Analyst Intern for Strategic Alliance Consulting. I implemented and created ransomware into a safe VM environment in AWS, MDR, and Packetsniffing with WireShark",
+  "Skills": ["C++", " Python", " Node", " CSS"," HTML"],
+  "SkillsText": "I have done multiple projects in C++ and Python. More specifically, create ransomware with the Python Cipher library, built a GUI for the SPU Baja Racing Team with Python and Tkinter, and have done all my school projects in C++",
   "Resume": "Brennan_LeBlanc_Resume_2024.pdf"  
 },
 "Project1": {
