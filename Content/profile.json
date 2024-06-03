@@ -31,7 +31,7 @@
     "Desc": "This is a System Specification for a discount app called Umbrella. The app will be built in Xcode to be uploaded to the IOS app store.",
     "GitHubRepo": "https://github.com",
     "MainImage": "pic.png",
-    "DetailImages": ["P1Detail1.png","P1Detail2.png","P1Detail3.png"]
+    "DetailImages": ["pic2.png","pic3.png","pic4.png"]
   },
   "Project2": {
     "Title": "Interesting Project 2",
