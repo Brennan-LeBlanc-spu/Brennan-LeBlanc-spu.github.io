@@ -1,15 +1,18 @@
 import { ConfigSingleton } from "./GetProfile.js";
-// Usage
+
+// Immediately invoked async function
 (async () => {
   try {
-      const configInstance = await ConfigSingleton.getInstance();
-      updateHTML(configInstance.getConfig());
-    } catch (error) {
-      console.error('Error:', error);
-    }
+    const configInstance = await ConfigSingleton.getInstance();
+    updateHTML(configInstance.getConfig());
+    initializePDFViewer();
+  } catch (error) {
+    console.error('Error:', error);
+  }
 })();
-  
+
 function updateHTML(configData) {
+  // Your existing HTML updates
   document.querySelector("#pfThumbnail").src = "Content/".concat(configData.About.Thumbnail);
   document.querySelector("#pfLinkedIn").href = configData.Contact.LinkedIn;
   document.querySelector("#pfGitHub").href = configData.Contact.GitHub;
@@ -32,11 +35,46 @@ function updateHTML(configData) {
   document.querySelector("#pfSkills").innerHTML = configData.Experience.Skills.toString();
   document.querySelector("#pfSkillsText").innerHTML = configData.Experience.SkillsText;
 
-  // document.querySelector("#pfResume").href = "./Content/".concat(configData.Experience.Resume);
-  // document.querySelector("#pfResume").href = "./Content/resume.pdf";
+  // Modified resume button click handler
   document.querySelector("#pfResume").onclick = () => {
-    let url = "./Content/".concat(configData.Experience.Resume);
-    window.open(url, "_blank");
+    const url = "./Content/".concat(configData.Experience.Resume);
+    showPDFViewer(url);
   }
+}
 
+function initializePDFViewer() {
+  const overlay = document.getElementById('pdfOverlay');
+  const closeButton = document.getElementById('closeButton');
+  const pdfViewer = document.getElementById('pdfViewer');
+
+  // Set up event listeners
+  closeButton.addEventListener('click', () => {
+    overlay.style.display = 'none';
+    document.body.style.overflow = 'auto';
+  });
+
+  // Close on escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && overlay.style.display === 'block') {
+      overlay.style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }
+  });
+
+  // Close if clicking outside the PDF
+  overlay.addEventListener('click', (e) => {
+    if (e.target === overlay) {
+      overlay.style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }
+  });
+}
+
+function showPDFViewer(url) {
+  const overlay = document.getElementById('pdfOverlay');
+  const pdfViewer = document.getElementById('pdfViewer');
+
+  pdfViewer.src = url;
+  overlay.style.display = 'block';
+  document.body.style.overflow = 'hidden';
 }
