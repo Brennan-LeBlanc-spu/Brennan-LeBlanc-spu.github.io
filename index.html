@@ -1,73 +1,841 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Web Page</title>
-    <link rel="stylesheet" href="./Styles/style.css">
+    <title>Brennan LeBlanc | Cybersecurity Professional</title>
+    <style>
+        :root {
+            --primary: #1e3a8a;
+            --secondary: #3b82f6;
+            --accent: #0284c7;
+            --light: #f8fafc;
+            --dark: #0f172a;
+            --gray: #64748b;
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        /* Header & Navigation */
+        header {
+            background-color: var(--primary);
+            color: white;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .logo img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        
+        .logo h1 {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: white;
+            transition: var(--transition);
+        }
+        
+        .nav-links a:hover:after {
+            width: 100%;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .social-links a {
+            color: white;
+            transition: var(--transition);
+        }
+        
+        .social-links img {
+            width: 24px;
+            height: 24px;
+            transition: var(--transition);
+        }
+        
+        .social-links a:hover img {
+            transform: scale(1.1);
+        }
+        
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 80px;
+            background: linear-gradient(to bottom, var(--primary), var(--secondary));
+            color: white;
+        }
+        
+        .hero-content {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+        }
+        
+        .hero-image {
+            flex-shrink: 0;
+        }
+        
+        .hero-image img {
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 5px solid white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .hero-text h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        
+        .hero-text h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+            opacity: 0.9;
+        }
+        
+        .hero-text p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            line-height: 1.8;
+        }
+        
+        .cta-button {
+            background-color: white;
+            color: var(--primary);
+            padding: 0.8rem 1.5rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            display: inline-block;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+        
+        /* About Section */
+        .section {
+            padding: 5rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            display: inline-block;
+            padding-bottom: 0.5rem;
+        }
+        
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 3px;
+            background: var(--secondary);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .about-content {
+            display: flex;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .about-text {
+            flex: 2;
+        }
+        
+        .about-text p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            color: var(--gray);
+        }
+        
+        /* Experience Section */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 3px;
+            background-color: var(--secondary);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -1.5px;
+        }
+        
+        .timeline-item {
+            padding: 1.5rem 2.5rem;
+            position: relative;
+            background-color: white;
+            width: calc(50% - 30px);
+            border-radius: 8px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+        
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            right: -10px;
+            background-color: white;
+            border: 4px solid var(--accent);
+            top: 22px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+        
+        .timeline-item:nth-child(even)::after {
+            left: -10px;
+        }
+        
+        .timeline-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+        
+        .timeline-item h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--secondary);
+            font-weight: 500;
+        }
+        
+        .timeline-item p {
+            color: var(--gray);
+        }
+        
+        .timeline-date {
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+        
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+        
+        .project-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+            transition: var(--transition);
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+        
+        .project-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .project-card:hover .project-image img {
+            transform: scale(1.05);
+        }
+        
+        .project-content {
+            padding: 1.5rem;
+        }
+        
+        .project-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        
+        .project-content p {
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+        }
+        
+        .project-links {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .project-links a {
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+        
+        .repo-link {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .demo-link {
+            background-color: var(--secondary);
+            color: white;
+        }
+        
+        .project-links a:hover {
+            opacity: 0.9;
+        }
+        
+        /* Skills Section */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            justify-content: center;
+        }
+        
+        .skill-category {
+            background-color: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .skill-category h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+            text-align: center;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--secondary);
+        }
+        
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+        
+        .skill-tag {
+            background-color: var(--light);
+            color: var(--primary);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+        
+        .skill-tag:hover {
+            background-color: var(--secondary);
+            color: white;
+        }
+        
+        /* Contact Section */
+        .contact-content {
+            display: flex;
+            gap: 2rem;
+        }
+        
+        .contact-info {
+            flex: 1;
+        }
+        
+        .contact-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+        
+        .contact-details {
+            margin-bottom: 2rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .contact-item i {
+            color: var(--secondary);
+            font-size: 1.2rem;
+        }
+        
+        .contact-item a {
+            color: var(--gray);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .contact-item a:hover {
+            color: var(--secondary);
+        }
+        
+        .resume-button {
+            background-color: var(--primary);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-block;
+            transition: var(--transition);
+            margin-top: 1rem;
+        }
+        
+        .resume-button:hover {
+            background-color: var(--secondary);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .footer-social {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        
+        .footer-social a {
+            color: white;
+            font-size: 1.5rem;
+            transition: var(--transition);
+        }
+        
+        .footer-social img {
+            width: 24px;
+            height: 24px;
+            transition: var(--transition);
+        }
+        
+        .footer-social a:hover img {
+            transform: scale(1.2);
+        }
+        
+        .footer-text {
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Design */
+        @media screen and (max-width: 992px) {
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .timeline::after {
+                left: 31px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-item:nth-child(odd) {
+                left: 0;
+            }
+            
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+            
+            .timeline-item::after {
+                left: 21px;
+            }
+            
+            .contact-content {
+                flex-direction: column;
+            }
+        }
+        
+        @media screen and (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-text h2 {
+                font-size: 1.5rem;
+            }
+            
+            .hero-image img {
+                width: 200px;
+                height: 200px;
+            }
+        }
+    </style>
 </head>
-
 <body>
-    <div>
-        <nav id="menu">
-            <div>
-                <div class="self-photo">
+    <!-- Header with Navigation -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <img src="./Content/zoomPicUnder2.jpeg" alt="Brennan LeBlanc">
+                    <h1>Brennan LeBlanc</h1>
                 </div>
-                <ul class="menu-list">
-                    <a href="index.html">
-                        <li>About</li>
+                <div class="nav-links">
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#experience">Experience</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/brennan-leblanc-4619a51a9/" target="_blank" rel="noopener noreferrer">
+                        <img src="./Icons/In-White-40@2x.png" alt="LinkedIn">
                     </a>
-                    <a href="projects.html">
-                        <li>Projects</li>
+                    <a href="https://github.com/Brennan-LeBlanc-spu" target="_blank" rel="noopener noreferrer">
+                        <img src="./Icons/github-mark-white.png" alt="GitHub">
                     </a>
-                    <a href="experience.html">
-                        <li>Experience</li>
-                    </a>
-                </ul>
-            </div>
-            <div class="icons">
-                <a id="pfLinkedIn" href="https://www.linkedin.com/in/brennan-leblanc-4619a51a9/" target="_blank"
-                    rel="noopener noreferrer">
-                    <img src="./Icons/In-White-40@2x.png">
-                </a>
-                <a id="pfGitHub" href="https://github.com/Brennan-LeBlanc-spu" target="_blank"
-                    rel="noopener noreferrer">
-                    <img src="./Icons/github-mark-white.png" alt="">
-                </a>
-            </div>
-        </nav>
-    </div>
-    <div class="main-section">
-        <div class="about-header">
-            <div class="about-me-image">
-                <img id="pfHeadshot" src="./Content/zoomPicUnder2.jpeg" alt="Photo">
-            </div>
-            <div>
-                <h1 id="pfAboutName">Brennan LeBlanc</h1>
-                <p id="pfAboutTitle">Portfolio</p>
-            </div>
+                </div>
+            </nav>
         </div>
-        <div class="about-section">
-            <div class="about-description">
-                <h2>About Me</h2>
-                <p id="pfAboutDesc">I am a computer science major at Seattle Pacific Univeristy. I have passions in Web
-                    Development and Cybersecurity. I have had the great opportunity to Intern for SAC as a Application
-                    Secuirty Intern, and for Prisidio as a Information Security Intern. Both of these internships have
-                    strengthen my curiosity in Cybersecurity. Currently, I am obtaining my Security + Certificate from
-                    compTIA and doing personal Web Dev projects on the side. I love to learn, and I am excited to
-                    continue my journey in programming and cybersecurity.</p>
-            </div>
-        </div>
-        <div class="about-section">
-            <div class="contact-me">
-                <h2>Contact Me</h2>
-                <p><a id="pfEmail" href="mailto:">leblancb@spu.edu</a></p>
-                <p id="elPhone"><a id="pfPhone" href="tel:"></a></p>
-            </div>
-        </div>
-    </div>
-    <script type="module" src="./Scripts/GetAbout.js"></script>
-</body>
+    </header>
 
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-image">
+                    <img src="./Content/zoomPicUnder2.jpeg" alt="Brennan LeBlanc">
+                </div>
+                <div class="hero-text">
+                    <h1>Brennan LeBlanc</h1>
+                    <h2>Cybersecurity Professional</h2>
+                    <p>Passionate cybersecurity specialist with expertise in application security, vulnerability management, and secure coding practices. Currently pursuing a Computer Science degree with a focus on security and web development.</p>
+                    <a href="#contact" class="cta-button">Get In Touch</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Me</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>I am a computer science major at Seattle Pacific University with a strong passion for Web Development and Cybersecurity. My professional journey has provided me with valuable experiences at SAC as an Application Security Intern and at Prisidio as an Information Security Intern, where I currently serve as the Application Security Lead.</p>
+                    
+                    <p>These opportunities have deepened my curiosity and expertise in cybersecurity, leading me to implement comprehensive vulnerability management programs and secure development practices. Currently, I am pursuing my Security+ certification from CompTIA while also working on personal web development projects to maintain a balanced skill set.</p>
+                    
+                    <p>I thrive in environments that challenge me to learn and grow, and I am excited to continue expanding my knowledge in programming and cybersecurity. My goal is to contribute to creating more secure digital ecosystems through innovative security solutions and best practices.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section" style="background-color: #f1f5f9;">
+        <div class="container">
+            <div class="section-title">
+                <h2>Experience</h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <span class="timeline-date">June 2024 - Present</span>
+                    <h3>Application Security Lead</h3>
+                    <h4>Prisidio</h4>
+                    <p>Implemented and built a comprehensive vulnerability management program utilizing SAST, SCA, and DAST scanning with StartLeft and Semgrep, achieving 100% coverage of code assets. Reduced critical vulnerabilities by 75% within six months and decreased average remediation time from 21 to 7 days through automated workflows and enhanced developer security awareness training.</p>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-date">June 2023 - June 2024</span>
+                    <h3>Application Security Intern</h3>
+                    <h4>SAC</h4>
+                    <p>Assisted in implementing security controls and best practices for application development. Conducted security code reviews and vulnerability assessments to identify potential security risks. Collaborated with development teams to address security findings and implement remediation strategies.</p>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-date">Expected June 2025</span>
+                    <h3>Bachelor of Science in Computer Science</h3>
+                    <h4>Seattle Pacific University</h4>
+                    <p>Pursuing a degree in Computer Science with a focus on Cybersecurity and Web Development. Actively participating in security-related projects and research opportunities.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Projects</h2>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="./Content/geekfood.png" alt="Geekfood.net">
+                    </div>
+                    <div class="project-content">
+                        <h3>Geekfood.net</h3>
+                        <p>A Full Stack Project featuring a threat feed website that pulls in threat feeds from open sources like Feedly and Alien Vault. The Front-end is built in React, and the backend is powered by AWS services.</p>
+                        <div class="project-links">
+                            <a href="#" class="repo-link">GitHub Repo</a>
+                            <a href="#" class="demo-link">Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="/api/placeholder/400/320" alt="Security Dashboard">
+                    </div>
+                    <div class="project-content">
+                        <h3>Vulnerability Dashboard</h3>
+                        <p>An interactive dashboard for tracking and managing security vulnerabilities across applications. Features real-time metrics, trend analysis, and automated alerting for critical findings.</p>
+                        <div class="project-links">
+                            <a href="#" class="repo-link">GitHub Repo</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="/api/placeholder/400/320" alt="Security Training Platform">
+                    </div>
+                    <div class="project-content">
+                        <h3>Developer Security Training Platform</h3>
+                        <p>A web-based training platform designed to educate developers on secure coding practices through interactive lessons, code challenges, and vulnerability identification exercises.</p>
+                        <div class="project-links">
+                            <a href="#" class="repo-link">GitHub Repo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section" style="background-color: #f1f5f9;">
+        <div class="container">
+            <div class="section-title">
+                <h2>Skills</h2>
+            </div>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>Security</h3>
+                    <div class="skills-list">
+                        <span class="skill-tag">Vulnerability Management</span>
+                        <span class="skill-tag">SAST</span>
+                        <span class="skill-tag">DAST</span>
+                        <span class="skill-tag">SCA</span>
+                        <span class="skill-tag">Secure Coding</span>
+                        <span class="skill-tag">Security Assessment</span>
+                        <span class="skill-tag">Threat Modeling</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Development</h3>
+                    <div class="skills-list">
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">HTML</span>
+                        <span class="skill-tag">CSS</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">AWS</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Tools</h3>
+                    <div class="skills-list">
+                        <span class="skill-tag">StartLeft</span>
+                        <span class="skill-tag">Semgrep</span>
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">GitHub</span>
+                        <span class="skill-tag">AWS Services</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact</h2>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i>✉️</i>
+                            <a href="mailto:leblancb@spu.edu">leblancb@spu.edu</a>
+                        </div>
+                        <div class="contact-item">
+                            <i>🔗</i>
+                            <a href="https://www.linkedin.com/in/brennan-leblanc-4619a51a9/" target="_blank">LinkedIn Profile</a>
+                        </div>
+                        <div class="contact-item">
+                            <i>💻</i>
+                            <a href="https://github.com/Brennan-LeBlanc-spu" target="_blank">GitHub Profile</a>
+                        </div>
+                    </div>
+                    <a href="./Content/resume.pdf" class="resume-button" target="_blank">View Resume</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-social">
+                    <a href="https://www.linkedin.com/in/brennan-leblanc-4619a51a9/" target="_blank" rel="noopener noreferrer">
+                        <img src="./Icons/In-White-40@2x.png" alt="LinkedIn">
+                    </a>
+                    <a href="https://github.com/Brennan-LeBlanc-spu" target="_blank" rel="noopener noreferrer">
+                        <img src="./Icons/github-mark-white.png" alt="GitHub">
+                    </a>
+                </div>
+                <p class="footer-text">© 2024 Brennan LeBlanc. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
 </html>
