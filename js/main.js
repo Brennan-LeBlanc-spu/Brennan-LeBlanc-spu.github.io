@@ -1,33 +1,69 @@
-// Smooth scrolling for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        
-        const targetId = this.getAttribute('href');
-        const targetElement = document.querySelector(targetId);
-        
-        if (targetElement) {
-            window.scrollTo({
-                top: targetElement.offsetTop - 70,
-                behavior: 'smooth'
-            });
-        }
-    });
-});
+document.addEventListener('DOMContentLoaded', function () {
+    // Get all navigation links
+    const navLinks = document.querySelectorAll('.nav-links a');
 
-// Add scroll event listener for navbar background color change
-const header = document.querySelector('header');
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 100) {
-        header.style.background = 'rgba(30, 58, 138, 0.95)'; // Slightly transparent primary color
-    } else {
-        header.style.background = 'var(--primary)';
+    // Get all sections
+    const sections = document.querySelectorAll('.section');
+
+    // Set the first section (Home/Hero) as active by default
+    if (sections.length > 0) {
+        sections[0].classList.add('active');
+        navLinks[0].classList.add('active');
     }
-});
 
-// Initialize animations for elements when they come into view
-document.addEventListener('DOMContentLoaded', () => {
-    // This is a placeholder for potential future animations
-    // You could add libraries like AOS (Animate On Scroll) here
-    console.log('Website loaded successfully!');
+    // Function to activate a section
+    function activateSection(sectionId) {
+        // Remove active class from all sections
+        sections.forEach(section => section.classList.remove('active'));
+
+        // Add active class to target section
+        const targetSection = document.getElementById(sectionId);
+        if (targetSection) {
+            targetSection.classList.add('active');
+        }
+
+        // Update navigation links
+        navLinks.forEach(link => {
+            if (link.getAttribute('href') === '#' + sectionId) {
+                link.classList.add('active');
+            } else {
+                link.classList.remove('active');
+            }
+        });
+    }
+
+    // Add click event listeners to navigation links
+    navLinks.forEach(link => {
+        link.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            // Get the target section id from the link's href
+            const targetId = this.getAttribute('href').substring(1);
+
+            // Activate the target section
+            activateSection(targetId);
+        });
+    });
+
+    // Add click event listener for CTA button in hero section
+    const ctaButton = document.querySelector('.cta-button');
+    if (ctaButton) {
+        ctaButton.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            // Get target section from the button's href attribute
+            const targetId = this.getAttribute('href').substring(1);
+
+            // Activate the contact section
+            activateSection(targetId);
+        });
+    }
+
+    // Check if there's a hash in the URL and navigate to that section
+    if (window.location.hash) {
+        const sectionId = window.location.hash.substring(1);
+        if (document.getElementById(sectionId)) {
+            activateSection(sectionId);
+        }
+    }
 });

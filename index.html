@@ -18,7 +18,7 @@
                     <h1>Brennan LeBlanc</h1>
                 </div>
                 <div class="nav-links">
-                    <a href="#home">Home</a>
+                    <a href="#home" class="active">Home</a>
                     <a href="#about">About</a>
                     <a href="#experience">Experience</a>
                     <a href="#projects">Projects</a>
@@ -38,235 +38,305 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-image">
-                    <img src="./Content/zoomPicUnder2.jpeg" alt="Brennan LeBlanc">
-                </div>
-                <div class="hero-text">
-                    <h1>Brennan LeBlanc</h1>
-                    <h2>Security Engineer</h2>
-                    <p>Security Engineer with 2 years of specialized experience in vulnerability management, application
-                        security, and AWS cloud security. Established a NIST-compliant vulnerability management program
-                        at PRISIDIO, reducing critical vulnerabilities by 20% while strengthening developer
-                        collaboration. Experienced in secure AWS architecture, IAM best practices, and full-stack
-                        development with security-by-design principles. Proven ability to identify, assess, and
-                        remediate security risks in cloud environments while maintaining operational effectiveness.</p>
-                    <a href="#contact" class="cta-button">Get In Touch</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="section">
-        <div class="container">
-            <div class="section-title">
-                <h2>About Me</h2>
-            </div>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>As a Cybersecurity Analyst at Prisidio, I specialize in vulnerability management and cloud
-                        security, implementing NIST-compliant security controls that reduced critical vulnerabilities by
-                        20% across our AWS environment. I combine my security expertise with full-stack development
-                        skills to architect secure applications from the ground up, implementing security-by-design
-                        principles in both React.js frontends and AWS backend infrastructure. My experience spans the
-                        entire security lifecycle—from threat modeling and vulnerability assessments to secure
-                        deployment pipelines and incident response. Through my previous roles at Prisidio and Strategic
-                        Alliance Consulting, I've developed a keen eye for identifying security gaps while collaborating
-                        effectively with development teams to implement practical solutions. I'm passionate about cloud
-                        security evolution and continuously expanding my knowledge to address emerging threats in
-                        complex environments.</p>
-
-                    <p>These experiences have strengthened my expertise in cybersecurity, enabling me to implement
-                        enterprise-grade vulnerability management programs and embed secure development practices into
-                        CI/CD pipelines. By integrating SAST, SCA, IaC, and DAST scanning into development workflows,
-                        I've fostered a security-first culture that balances protection with productivity. Currently,
-                        I'm pursuing my Security+ certification from CompTIA and AWS Cloud Practitioner to formalize my
-                        cloud security knowledge. I've also completed the Google AI Essentials Certificate, equipping me
-                        with insights into AI security considerations and responsible implementation. Additionally, I
-                        maintain several security research projects where I explore emerging threat vectors and
-                        defensive techniques in cloud environments, keeping my technical skills sharp and my security
-                        knowledge current.</p>
-
-                    <p>My approach to cybersecurity blends technical expertise with a business-oriented mindset,
-                        allowing me to identify and mitigate risks while enabling innovation. I'm particularly drawn to
-                        Google Cloud's mission of enabling secure growth through proactive security engineering and
-                        systemic problem-solving. With my background in vulnerability management, secure development,
-                        and AWS cloud security, I'm well-positioned to help ensure Google Cloud remains the industry's
-                        most secure platform. I welcome opportunities to collaborate with forward-thinking teams where I
-                        can contribute to building resilient security solutions that protect users while supporting
-                        business objectives.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience" class="section" style="background-color: #f1f5f9;">
-        <div class="container">
-            <div class="section-title">
-                <h2>Experience</h2>
-            </div>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <span class="timeline-date">June 2024 - Present</span>
-                    <h3>Cybersecurity Analyst</h3>
-                    <h4>Prisidio</h4>
-                    <p>Implemented and built a comprehensive vulnerability management program utilizing SAST, SCA, and
-                        DAST scanning with StartLeft and Semgrep, achieving 100% coverage of code assets. Reduced
-                        critical vulnerabilities by 75% within six months and decreased average remediation time from 21
-                        to 7 days through automated workflows and enhanced developer security awareness training.</p>
-                </div>
-                <div class="timeline-item">
-                    <span class="timeline-date">June 2023 - June 2024</span>
-                    <h3>Application Security Intern</h3>
-                    <h4>SAC</h4>
-                    <p>Assisted in implementing security controls and best practices for application development.
-                        Conducted security code reviews and vulnerability assessments to identify potential security
-                        risks. Collaborated with development teams to address security findings and implement
-                        remediation strategies.</p>
-                </div>
-                <div class="timeline-item">
-                    <span class="timeline-date">Expected June 2025</span>
-                    <h3>Bachelor of Science in Computer Science</h3>
-                    <h4>Seattle Pacific University</h4>
-                    <p>Pursuing a degree in Computer Science with a focus on Cybersecurity and Web Development. Actively
-                        participating in security-related projects and research opportunities.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Projects</h2>
-            </div>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="./Content/geekfood.png" alt="Geekfood.net">
+    <!-- Main content container -->
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="section active">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-image">
+                        <img src="./Content/zoomPicUnder2.jpeg" alt="Brennan LeBlanc">
                     </div>
-                    <div class="project-content">
-                        <h3>Geekfood.net</h3>
-                        <p>A Full Stack Project featuring a threat feed website that pulls in threat feeds from open
-                            sources like Feedly and Alien Vault. The Front-end is built in React, and the backend is
-                            powered by AWS services.</p>
-                        <div class="project-links">
-                            <a href="#" class="repo-link">GitHub Repo</a>
-                            <a href="#" class="demo-link">Live Demo</a>
+                    <div class="hero-text">
+                        <h1>Brennan LeBlanc</h1>
+                        <h2>Security Engineer</h2>
+                        <p>Security Engineer with 2 years of specialized experience in vulnerability management,
+                            application security, and AWS cloud security. Established a NIST-compliant vulnerability
+                            management program at PRISIDIO, reducing critical vulnerabilities by 20% while strengthening
+                            developer collaboration. Experienced in secure AWS architecture, IAM best practices, and
+                            full-stack development with security-by-design principles.</p>
+                        <a href="#contact" class="cta-button">Get In Touch</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>About Me</h2>
+                </div>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>As a Cybersecurity Analyst at Prisidio, I specialize in vulnerability management and cloud
+                            security, implementing NIST-compliant security controls that reduced critical
+                            vulnerabilities by
+                            20% across our AWS environment. I combine my security expertise with full-stack development
+                            skills to architect secure applications from the ground up, implementing security-by-design
+                            principles in both React.js frontends and AWS backend infrastructure.</p>
+
+                        <p>These experiences have strengthened my expertise in cybersecurity, enabling me to implement
+                            enterprise-grade vulnerability management programs and embed secure development practices
+                            into
+                            CI/CD pipelines. By integrating SAST, SCA, IaC, and DAST scanning into development
+                            workflows,
+                            I've fostered a security-first culture that balances protection with productivity.</p>
+
+                        <p>My approach to cybersecurity blends technical expertise with a business-oriented mindset,
+                            allowing me to identify and mitigate risks while enabling innovation. I'm particularly drawn
+                            to
+                            Google Cloud's mission of enabling secure growth through proactive security engineering and
+                            systemic problem-solving.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section with New Design -->
+        <section id="experience" class="section">
+            <div class="container">
+                <h2 class="section-title">Experience</h2>
+
+                <div class="experience-grid">
+                    <!-- Current Position -->
+                    <div class="experience-card current">
+                        <div class="experience-card-header">
+                            <div class="experience-icon">
+                                <i class="shield-icon"></i>
+                            </div>
+                            <div class="experience-title">
+                                <h3>Cybersecurity Analyst</h3>
+                                <h4>PRISIDIO</h4>
+                            </div>
+                            <div class="experience-duration">
+                                <span class="duration-tag">Aug 2024 - Present</span>
+                            </div>
+                        </div>
+                        <div class="experience-content">
+                            <ul class="achievement-list">
+                                <li>
+                                    <span class="achievement-highlight">100%</span> code assets coverage with
+                                    vulnerability management program
+                                </li>
+                                <li>
+                                    <span class="achievement-highlight">20%</span> reduction in critical vulnerabilities
+                                </li>
+                                <li>Integrated SAST, SCA, IaC, and DAST scanning into CI/CD pipeline</li>
+                                <li>Reduced mobile risk by <span class="achievement-highlight">30%</span> through
+                                    developer buy-in</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Previous Position 1 -->
+                    <div class="experience-card">
+                        <div class="experience-card-header">
+                            <div class="experience-icon">
+                                <i class="code-shield-icon"></i>
+                            </div>
+                            <div class="experience-title">
+                                <h3>Information Security Intern/Security Engineer</h3>
+                                <h4>PRISIDIO</h4>
+                            </div>
+                            <div class="experience-duration">
+                                <span class="duration-tag">May 2024 - Aug 2024</span>
+                            </div>
+                        </div>
+                        <div class="experience-content">
+                            <ul class="achievement-list">
+                                <li>Engineered secure full-stack threat feed website</li>
+                                <li>Remediated <span class="achievement-highlight">12+</span> critical vulnerabilities
+                                    across company assets</li>
+                                <li>Deployed AWS infrastructure with IAM best practices and S3 encryption</li>
+                                <li>Implemented security-by-design in React frontend and Node.js backend</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Previous Position 2 -->
+                    <div class="experience-card">
+                        <div class="experience-card-header">
+                            <div class="experience-icon">
+                                <i class="research-icon"></i>
+                            </div>
+                            <div class="experience-title">
+                                <h3>Cybersecurity Analyst Intern</h3>
+                                <h4>Strategic Alliance Consulting</h4>
+                            </div>
+                            <div class="experience-duration">
+                                <span class="duration-tag">May 2023 - Dec 2023</span>
+                            </div>
+                        </div>
+                        <div class="experience-content">
+                            <ul class="achievement-list">
+                                <li>Researched generative AI implications on phishing scams</li>
+                                <li>Architected network topology for ethical hacking environment</li>
+                                <li>Successfully implemented ransomware proof-of-concept, encrypting <span
+                                        class="achievement-highlight">100%</span> of test files</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Education -->
+                    <div class="experience-card education">
+                        <div class="experience-card-header">
+                            <div class="experience-icon">
+                                <i class="education-icon"></i>
+                            </div>
+                            <div class="experience-title">
+                                <h3>Bachelor of Science in Computer Science</h3>
+                                <h4>Seattle Pacific University</h4>
+                            </div>
+                            <div class="experience-duration">
+                                <span class="duration-tag">Expected June 2025</span>
+                            </div>
+                        </div>
+                        <div class="experience-content">
+                            <p>Specializing in Cybersecurity and Web Development</p>
+                            <div class="skill-pills">
+                                <span class="skill-pill">Google AI Essentials</span>
+                                <span class="skill-pill">Pursuing Security+</span>
+                                <span class="skill-pill">Pursuing AWS Cloud Practitioner</span>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="/api/placeholder/400/320" alt="Security Dashboard">
-                    </div>
-                    <div class="project-content">
-                        <h3>Vulnerability Dashboard</h3>
-                        <p>An interactive dashboard for tracking and managing security vulnerabilities across
-                            applications. Features real-time metrics, trend analysis, and automated alerting for
-                            critical findings.</p>
-                        <div class="project-links">
-                            <a href="#" class="repo-link">GitHub Repo</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="/api/placeholder/400/320" alt="Security Training Platform">
-                    </div>
-                    <div class="project-content">
-                        <h3>Developer Security Training Platform</h3>
-                        <p>A web-based training platform designed to educate developers on secure coding practices
-                            through interactive lessons, code challenges, and vulnerability identification exercises.
-                        </p>
-                        <div class="project-links">
-                            <a href="#" class="repo-link">GitHub Repo</a>
-                        </div>
-                    </div>
-                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="section" style="background-color: #f1f5f9;">
-        <div class="container">
-            <div class="section-title">
-                <h2>Skills</h2>
+        <!-- Projects Section -->
+        <section id="projects" class="section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Projects</h2>
+                </div>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="./Content/geekfood.png" alt="Geekfood.net">
+                        </div>
+                        <div class="project-content">
+                            <h3>Geekfood.net</h3>
+                            <p>A Full Stack Project featuring a threat feed website that pulls in threat feeds from open
+                                sources like Feedly and Alien Vault. The Front-end is built in React, and the backend is
+                                powered by AWS services.</p>
+                            <div class="project-links">
+                                <a href="#" class="repo-link">GitHub Repo</a>
+                                <a href="#" class="demo-link">Live Demo</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="/api/placeholder/400/320" alt="Security Dashboard">
+                        </div>
+                        <div class="project-content">
+                            <h3>Vulnerability Dashboard</h3>
+                            <p>An interactive dashboard for tracking and managing security vulnerabilities across
+                                applications. Features real-time metrics, trend analysis, and automated alerting for
+                                critical findings.</p>
+                            <div class="project-links">
+                                <a href="#" class="repo-link">GitHub Repo</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="/api/placeholder/400/320" alt="Security Training Platform">
+                        </div>
+                        <div class="project-content">
+                            <h3>Developer Security Training Platform</h3>
+                            <p>A web-based training platform designed to educate developers on secure coding practices
+                                through interactive lessons, code challenges, and vulnerability identification
+                                exercises.
+                            </p>
+                            <div class="project-links">
+                                <a href="#" class="repo-link">GitHub Repo</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="skills-container">
-                <div class="skill-category">
-                    <h3>Security</h3>
-                    <div class="skills-list">
-                        <span class="skill-tag">Vulnerability Management</span>
-                        <span class="skill-tag">SAST</span>
-                        <span class="skill-tag">DAST</span>
-                        <span class="skill-tag">SCA</span>
-                        <span class="skill-tag">Secure Coding</span>
-                        <span class="skill-tag">Security Assessment</span>
-                        <span class="skill-tag">Threat Modeling</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>Development</h3>
-                    <div class="skills-list">
-                        <span class="skill-tag">JavaScript</span>
-                        <span class="skill-tag">React</span>
-                        <span class="skill-tag">HTML</span>
-                        <span class="skill-tag">CSS</span>
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">AWS</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>Tools</h3>
-                    <div class="skills-list">
-                        <span class="skill-tag">StartLeft</span>
-                        <span class="skill-tag">Semgrep</span>
-                        <span class="skill-tag">Git</span>
-                        <span class="skill-tag">GitHub</span>
-                        <span class="skill-tag">AWS Services</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Contact</h2>
-            </div>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <h3>Get In Touch</h3>
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <i>✉️</i>
-                            <a href="mailto:brennan.leblanc.cd@gmail.com">brennan.leblanc.cs@gmail.com</a>
-                        </div>
-                        <div class="contact-item">
-                            <i>🔗</i>
-                            <a href="https://www.linkedin.com/in/brennan-leblanc-4619a51a9/" target="_blank">LinkedIn
-                                Profile</a>
-                        </div>
-                        <div class="contact-item">
-                            <i>💻</i>
-                            <a href="https://github.com/Brennan-LeBlanc-spu" target="_blank">GitHub Profile</a>
+        <!-- Skills Section -->
+        <section id="skills" class="section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Skills</h2>
+                </div>
+                <div class="skills-container">
+                    <div class="skill-category">
+                        <h3>Security</h3>
+                        <div class="skills-list">
+                            <span class="skill-tag">Vulnerability Management</span>
+                            <span class="skill-tag">SAST</span>
+                            <span class="skill-tag">DAST</span>
+                            <span class="skill-tag">SCA</span>
+                            <span class="skill-tag">Secure Coding</span>
+                            <span class="skill-tag">Security Assessment</span>
+                            <span class="skill-tag">Threat Modeling</span>
                         </div>
                     </div>
-                    <a href="./Content/Brennan Resume 2025.pdf" class="resume-button" target="_blank">View Resume</a>
+                    <div class="skill-category">
+                        <h3>Development</h3>
+                        <div class="skills-list">
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">React</span>
+                            <span class="skill-tag">HTML</span>
+                            <span class="skill-tag">CSS</span>
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">AWS</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Tools</h3>
+                        <div class="skills-list">
+                            <span class="skill-tag">StartLeft</span>
+                            <span class="skill-tag">Semgrep</span>
+                            <span class="skill-tag">Git</span>
+                            <span class="skill-tag">GitHub</span>
+                            <span class="skill-tag">AWS Services</span>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Contact</h2>
+                </div>
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <h3>Get In Touch</h3>
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <i>✉️</i>
+                                <a href="mailto:brennan.leblanc.cd@gmail.com">brennan.leblanc.cs@gmail.com</a>
+                            </div>
+                            <div class="contact-item">
+                                <i>🔗</i>
+                                <a href="https://www.linkedin.com/in/brennan-leblanc-4619a51a9/"
+                                    target="_blank">LinkedIn
+                                    Profile</a>
+                            </div>
+                            <div class="contact-item">
+                                <i>💻</i>
+                                <a href="https://github.com/Brennan-LeBlanc-spu" target="_blank">GitHub Profile</a>
+                            </div>
+                        </div>
+                        <a href="./Content/BRENNAN LEBLANC RESUME 2.0 copy.pdf" class="resume-button"
+                            target="_blank">View
+                            Resume</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <!-- Footer -->
     <footer>
